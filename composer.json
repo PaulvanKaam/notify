@@ -1,0 +1,43 @@
+{
+    "name": "webtraders/notify",
+    "description": "A simple plugin that sends emails after a new entry is added",
+    "type": "craft-plugin",
+    "version": "1.0.0.",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "notify"
+    ],
+    "support": {
+        "docs": "https://github.com/Webtraders/notify/blob/master/README.md",
+        "issues": "https://github.com/Webtraders/notify/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Webtraders",
+            "homepage": "http://webtraders.nl"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "webtraders\\notify\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Notify",
+        "handle": "notify",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/Webtraders/notify/master/CHANGELOG.md",
+        "components": {
+            "notifyService": "webtraders\\notify\\services\\NotifyService"
+        },
+        "class": "webtraders\\notify\\Notify"
+    }
+}
