@@ -19,6 +19,7 @@ use craft\events\PluginEvent;
 use craft\web\UrlManager;
 use craft\events\RegisterUrlRulesEvent;
 use craft\elements\Entry;
+use craft\mail\Message;
 
 use yii\base\Event;
 
@@ -114,7 +115,12 @@ class Notify extends Plugin
             Entry::class,
             Entry::EVENT_AFTER_SAVE,
             function ($event) {
-                
+                $email = new EmailModel();
+                $email->toEmail = 'paul@webtraders.nl';
+                $email->subject = 'Heyyyyy';
+                $email->body    = 'How you doin?';
+
+                craft()->email->sendEmail($email);
             }
         );
 
