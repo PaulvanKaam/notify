@@ -115,12 +115,15 @@ class Notify extends Plugin
             Entry::class,
             Entry::EVENT_AFTER_SAVE,
             function ($event) {
-                $email = new EmailModel();
-                $email->toEmail = 'paul@webtraders.nl';
-                $email->subject = 'Heyyyyy';
-                $email->body    = 'How you doin?';
+                $message = new Message();
 
-                craft()->email->sendEmail($email);
+                $message->setFrom('noreply@webtraders.nl');
+                $message->setTo('paul@webtraders.nl');
+                $message->setSubject('Subject');
+                $message->setHtmlBody('Body');
+
+                return Craft::$app->mailer->send($message);
+
             }
         );
 
