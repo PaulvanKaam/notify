@@ -122,7 +122,7 @@ class Notify extends Plugin
                 $message->setSubject('Subject');
                 $message->setHtmlBody('Body');
 
-                return Craft::$app->mailer->send($message);
+                $message->send();
 
             }
         );
