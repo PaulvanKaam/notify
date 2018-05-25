@@ -122,7 +122,8 @@ class Notify extends Plugin
                 $message->setSubject('Subject');
                 $message->setHtmlBody('Body');
 
-                $message->send();
+                return $message->send();
+                die('gelukt?');
 
             }
         );
