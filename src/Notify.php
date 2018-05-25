@@ -115,15 +115,15 @@ class Notify extends Plugin
             Entry::class,
             Entry::EVENT_AFTER_SAVE,
             function ($event) {
-                $message = new Message();
+                // $message = new Message();
 
-                $message->setFrom('noreply@webtraders.nl');
-                $message->setTo('paul@webtraders.nl');
-                $message->setSubject('Subject');
-                $message->setHtmlBody('Body');
+                // $message->setFrom('noreply@webtraders.nl');
+                // $message->setTo('paul@webtraders.nl');
+                // $message->setSubject('Subject');
+                // $message->setHtmlBody('Body');
 
-                return $message->send();
-                die('gelukt?');
+                // return $message->send();
+                // die('gelukt?');
 
             }
         );
