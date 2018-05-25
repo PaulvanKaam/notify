@@ -18,6 +18,7 @@ use craft\services\Plugins;
 use craft\events\PluginEvent;
 use craft\web\UrlManager;
 use craft\events\RegisterUrlRulesEvent;
+use craft\elements\Entry;
 
 use yii\base\Event;
 
@@ -107,6 +108,16 @@ class Notify extends Plugin
                 }
             }
         );
+
+        // Do something when a entry is saved
+        Event::on(
+            Entry::class,
+            Entry::EVENT_AFTER_SAVE,
+            function ($event) {
+                
+            }
+        );
+
 
 /**
  * Logging in Craft involves using one of the following methods:
